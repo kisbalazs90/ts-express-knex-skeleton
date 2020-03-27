@@ -4,6 +4,8 @@ services:
     image: node:12.16.1-alpine
     volumes:
       - ./:/app
+    ports:
+      - "3000:3000"
     depends_on:
       - mysql
     networks:
