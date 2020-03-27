@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node build/start.js",
     "start-dev": "nodemon --config \"./util/nodemon.json\"/",
-    "build": "rm -rf ./build && tsc",
-    "start": "node build/start.js"
+    "build": "rm -rf ./build && tsc"
   },
   "repository": {
     "type": "git",
