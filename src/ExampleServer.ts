@@ -1,9 +1,3 @@
-/**
- * Server file for ExpressJS
- *
- * created by Sean Maxwell April 14, 2019
- */
-
 import * as bodyParser from 'body-parser';
 import * as controllers from './controllers';
 
@@ -13,7 +7,7 @@ import { Logger } from '@overnightjs/logger';
 
 class ExampleServer extends Server {
 
-    private readonly SERVER_STARTED = 'Example server started on port: ';
+    private readonly SERVER_STARTED = 'RChat backend started on port: ';
 
 
     constructor() {
