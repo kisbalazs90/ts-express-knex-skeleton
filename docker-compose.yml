@@ -1,0 +1,21 @@
+version: '3'
+services:
+  backend:
+    image: node:12.16.1-alpine
+    volumes:
+      - ./:/app
+    depends_on:
+      - mysql
+    networks:
+      - rchat
+  mysql:
+    image: mariadb
+    restart: always
+    volumes:
+      - ./database-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rchat123
+    networks:
+      - rchat
+networks:
+  rchat:
