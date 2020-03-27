@@ -18,7 +18,7 @@ export const config = {
 const instance: Knex = Knex(config as Knex.Config)
 
 Logger.Info(
-  `Will connect to postgres://${config.connection.user}@${
+  `Will connect to://${config.connection.user}@${
     config.connection.host
   }/${config.connection.database}`
 )
