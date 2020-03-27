@@ -15,7 +15,7 @@ export const config = {
   }
 }
 
-const instance: Knex = Knex(config as Knex.Config)
+const instance: any = Knex(config as Knex.Config)
 
 Logger.Info(
   `Will connect to://${config.connection.user}@${

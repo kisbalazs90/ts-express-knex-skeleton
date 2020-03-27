@@ -1,18 +1,14 @@
 import { Request, Response } from 'express';
 import { Controller, Middleware, Get, Put, Post, Delete, ClassMiddleware } from '@overnightjs/core';
 import { Logger } from '@overnightjs/logger';
-import { config } from 'src/middlewares/AuthMiddleware';
+import AuthMiddleware from '../middlewares/AuthMiddleware';
 
-@ClassMiddleware((req:any, res:any, next:any) => {
-    Logger.Info(req);
-    next();
-})
 @Controller('user')
 export class ExampleController {
 
     @Get(':msg')
+    @Middleware(AuthMiddleware)
     private getMessage(req: Request, res: Response) {
-        Logger.Info('Middlewre??');
         Logger.Info(req.params.msg);
         res.status(200).json({
             message: req.params.msg
