@@ -9,12 +9,15 @@ services:
     networks:
       - rchat
     command: /bin/sh -c "cd /app && npm run start-dev"
+    env_file:
+      - .env
   mysql:
     image: mariadb
     restart: always
     volumes:
       - ./database-data:/var/lib/mysql
     environment:
+      MYSQL_DATABASE: rchat
       MYSQL_ROOT_PASSWORD: rchat123
     networks:
       - rchat
