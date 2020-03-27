@@ -1,0 +1,16 @@
+{
+  "name": "rchat-backend",
+  "version": "1.0.0",
+  "description": "...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/kisbalazs90/rchat-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/kisbalazs90/rchat-backend#readme"
+}
