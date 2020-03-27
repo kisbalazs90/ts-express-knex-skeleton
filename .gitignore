@@ -1,2 +1,4 @@
+.DS_Store
+build/
 database-data/
 node_modules/
