@@ -8,6 +8,7 @@ services:
       - mysql
     networks:
       - rchat
+    command: /bin/sh -c "cd /app && npm run start-dev"
   mysql:
     image: mariadb
     restart: always
