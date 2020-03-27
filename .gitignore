@@ -1,4 +1,5 @@
 .DS_Store
+.env
 build/
 database-data/
 node_modules/
