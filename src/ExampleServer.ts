@@ -9,7 +9,6 @@ class ExampleServer extends Server {
 
     private readonly SERVER_STARTED = 'RChat backend started on port: ';
 
-
     constructor() {
         super(true);
         this.app.use(bodyParser.json());
