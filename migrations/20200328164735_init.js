@@ -5,7 +5,7 @@ exports.up = function(knex) {
             table.increments('id');
             table.string('name', 255).notNullable();
             table.string('email', 255).notNullable();
-            table.string('passwd', 255).notNullable();
+            table.string('password', 255).notNullable();
         })
         .createTable('conversations', function (table) {
             table.increments('id');

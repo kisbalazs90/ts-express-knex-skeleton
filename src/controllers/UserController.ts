@@ -1,25 +1,40 @@
 import { Request, Response } from 'express';
 import { Controller, Middleware, Get, Put, Post, Delete, ClassMiddleware } from '@overnightjs/core';
 import { Logger } from '@overnightjs/logger';
-import AuthMiddleware from '../middlewares/AuthMiddleware';
+import { JwtManager } from '@overnightjs/jwt';
+import { UserModel } from '../models/UserModel';
 
-@Controller('user')
+@Controller('users')
 export class UserController {
+    @Get()
+    @Middleware(JwtManager.middleware)
+    private getUsers(req: Request, res: Response) {
+        const userModel = new UserModel();
+        userModel.findAll().then((rows) => {
+            return res.status(200).json({
+                response: rows
+            });
+        });
+    }
 
     @Get(':id')
-    @Middleware(AuthMiddleware)
+    @Middleware(JwtManager.middleware)
     private getUser(req: Request, res: Response) {
-        Logger.Info(req.params.id);
-        res.status(200).json({
-            message: req.params.id
+        const userModel = new UserModel();
+        userModel.findById(req.params.id).then((rows) => {
+            return res.status(200).json({
+                response: rows
+            });
         });
     }
 
     @Post()
-    private postUser(req: Request, res: Response) {
-        console.log(req.body);
-        return res.status(400).json({
-            error: req.params.msg,
-        });
+    private createUser(req: Request, res: Response) {
+        const userModel = new UserModel();
+        userModel.save(req.body).then((rows:any) => {
+            return res.status(200).json({
+                response: rows
+            });
+        })
     }
 }

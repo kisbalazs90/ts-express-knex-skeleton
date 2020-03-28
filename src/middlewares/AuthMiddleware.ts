@@ -5,4 +5,3 @@ export default (req:any, res:any, next:any) => {
     Logger.Info('Middleware is called!');
     next();
 }
-
