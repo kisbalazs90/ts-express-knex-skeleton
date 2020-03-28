@@ -4,9 +4,9 @@ import { Logger } from '@overnightjs/logger';
 import AuthMiddleware from '../middlewares/AuthMiddleware';
 
 @Controller('user')
-export class ExampleController {
+export class UserController {
 
-    @Get(':id')
+    @Get(':msg')
     @Middleware(AuthMiddleware)
     private getUser(req: Request, res: Response) {
         Logger.Info(req.params.msg);
@@ -15,31 +15,11 @@ export class ExampleController {
         });
     }
 
-    @Put(':id')
-    private putUser(req: Request, res: Response) {
-        Logger.Info(req.params.msg);
-        return res.status(400).json({
-            error: req.params.msg,
-        });
-    }
-
-    @Post(':id')
+    @Post()
     private postUser(req: Request, res: Response) {
-        Logger.Info(req.params.msg);
+        console.log(req.body);
         return res.status(400).json({
             error: req.params.msg,
         });
-    }
-
-    @Delete(':id')
-    private delUser(req: Request, res: Response) {
-        try {
-            throw new Error(req.params.msg);
-        } catch (err) {
-            Logger.Err(err, true);
-            return res.status(400).json({
-                error: req.params.msg,
-            });
-        }
     }
 }
