@@ -6,12 +6,12 @@ import AuthMiddleware from '../middlewares/AuthMiddleware';
 @Controller('user')
 export class UserController {
 
-    @Get(':msg')
+    @Get(':id')
     @Middleware(AuthMiddleware)
     private getUser(req: Request, res: Response) {
-        Logger.Info(req.params.msg);
+        Logger.Info(req.params.id);
         res.status(200).json({
-            message: req.params.msg
+            message: req.params.id
         });
     }
 
