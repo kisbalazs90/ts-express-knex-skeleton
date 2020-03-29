@@ -49,7 +49,7 @@ export class UserModel {
             .where({
                 email: email,
                 password: this.hashPassword(password)
-            });            
+            });
         } catch (error) {
             Logger.Err(error);
         }

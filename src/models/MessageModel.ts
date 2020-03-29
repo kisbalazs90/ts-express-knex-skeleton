@@ -28,6 +28,7 @@ export class MessageModel {
                 .from(`${this.tableName} as m`)
                 .leftJoin('users as u', 'm.from', 'u.id')
                 .where({ conversation_id:conversationId })
+                .whereNull('is_deleted')
         } catch (error) {
             console.log(error)
             Logger.Err(error);   
