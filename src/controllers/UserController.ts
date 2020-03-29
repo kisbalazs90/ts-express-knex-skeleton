@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
 import { Controller, Middleware, Get, Put, Post, Delete, ClassMiddleware } from '@overnightjs/core';
-import { Logger } from '@overnightjs/logger';
 import { JwtManager } from '@overnightjs/jwt';
 import { UserModel } from '../models/UserModel';
 
