@@ -17,5 +17,10 @@ inside the container or you can run the command outside from the container as we
 
 ### Insert User
 ```
-curl -X POST -H "Content-Type: application/json" -d '{"name":"Balázs Kis", "email":"kisbalazs90@gmail.com", "password": "123456"}' http://127.0.0.1:3000/user/
+curl -X POST -H "Content-Type: application/json" -d '{"from":"1", "email":"kisbalazs90@gmail.com", "password": "123456"}' http://127.0.0.1:3000/user/
+```
+
+### Insert Message
+```
+curl -X POST -H "Content-Type: application/json" -d '{"from":1, "conversation_id":1, "message": "testMessage"}' http://127.0.0.1:3000/conversations -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1ODU0MjkyNzAsImV4cCI6MTU4NTUxNTY3MH0.PNlu5oRmiu3UyLFBHbdovgJJjwvKd35UFlOyn0JR3wE'
 ```
