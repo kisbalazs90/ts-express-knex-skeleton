@@ -18,7 +18,8 @@ exports.up = function(knex) {
             table.integer('from').notNullable();
             table.integer('conversation_id').notNullable();
             table.string('message').notNullable();
-            table.timestamp('deleted_at');
+            table.timestamp('created_at');
+            table.timestamp('deleted_at').nullable();
         })
 };
 
