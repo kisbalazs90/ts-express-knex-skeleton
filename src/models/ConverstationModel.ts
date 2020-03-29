@@ -28,7 +28,7 @@ export class ConverstationModel {
                 
         } catch (error) {
             console.log(error)
-            Logger.Err(error);   
+            Logger.Err(error);
         }
     }
 }

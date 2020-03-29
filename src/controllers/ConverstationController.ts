@@ -2,14 +2,15 @@ import { Request, Response } from 'express';
 import { Controller, Middleware, Get, Put, Post, Delete, ClassMiddleware } from '@overnightjs/core';
 import { JwtManager } from '@overnightjs/jwt';
 import { MessageModel } from '../models/MessageModel';
+import { ConverstationModel } from 'src/models/ConverstationModel';
 
-@Controller('messages')
-export class MessageController {
+@Controller('converstations')
+export class ConverstationController {
     @Get(':conversation_id')
     @Middleware(JwtManager.middleware)
-    private getMessages(req: Request, res: Response) {
-        const messageModel = new MessageModel();
-        messageModel.findAll(req.params.conversation_id).then((rows) => {
+    private getConverstations(req: Request, res: Response) {
+        const converstationModel = new ConverstationModel();
+        converstationModel.findAll().then((rows) => {
             return res.status(200).json({
                 response: rows
             });
@@ -18,7 +19,7 @@ export class MessageController {
 
     @Post()
     @Middleware(JwtManager.middleware)
-    private createMessages(req: Request, res: Response) {
+    private crecreateConverstation(req: Request, res: Response) {
         const messageModel = new MessageModel();
         messageModel.save(req.body).then((rows) => {
             return res.status(200).json({
