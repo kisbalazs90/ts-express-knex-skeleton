@@ -19,56 +19,22 @@
     },
     "servers": [
       {
-        "url": "https://petstore.swagger.io/v2"
-      },
-      {
-        "url": "http://petstore.swagger.io/v2"
+        "url": "http:127.0.0.1:3000"
       }
     ],
-    "tags": [
-      {
-        "name": "pet",
-        "description": "Everything about your Pets",
-        "externalDocs": {
-          "description": "Find out more",
-          "url": "http://swagger.io"
-        }
-      },
-      {
-        "name": "store",
-        "description": "Access to Petstore orders"
-      },
-      {
-        "name": "user",
-        "description": "Operations about user",
-        "externalDocs": {
-          "description": "Find out more about our store",
-          "url": "http://swagger.io"
-        }
-      }
-    ],
+    "tags": [],
     "paths": {
-      "/pet": {
-        "put": {
+      "/users": {
+        "post": {
           "tags": [
-            "pet"
+            "user"
           ],
-          "summary": "Update an existing pet",
-          "operationId": "updatePet",
+          "summary": "Insert user",
+          "operationId": "createUser",
           "requestBody": {
-            "description": "Pet object that needs to be added to the store",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pet"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pet"
-                }
-              }
-            },
+            "name": "user name",
+            "email": "user email",
+            "password": "user password",
             "required": true
           },
           "responses": {
@@ -82,44 +48,6 @@
             },
             "405": {
               "description": "Validation exception",
-              "content": {}
-            }
-          },
-          "security": [
-            {
-              "petstore_auth": [
-                "write:pets",
-                "read:pets"
-              ]
-            }
-          ],
-          "x-codegen-request-body-name": "body"
-        },
-        "post": {
-          "tags": [
-            "pet"
-          ],
-          "summary": "Add a new pet to the store",
-          "operationId": "addPet",
-          "requestBody": {
-            "description": "Pet object that needs to be added to the store",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pet"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pet"
-                }
-              }
-            },
-            "required": true
-          },
-          "responses": {
-            "405": {
-              "description": "Invalid input",
               "content": {}
             }
           },

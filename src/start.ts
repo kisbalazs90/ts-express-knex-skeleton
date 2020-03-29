@@ -1,5 +1,5 @@
 
-import ExampleServer from './ExampleServer';
+import RChatServer from './RChatServer';
 
-const exampleServer = new ExampleServer();
-exampleServer.start(3000);
+const server = new RChatServer();
+server.start(3000);

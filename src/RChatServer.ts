@@ -5,7 +5,7 @@ import { Logger } from '@overnightjs/logger';
 import * as swaggerUi from 'swagger-ui-express';
 import * as swaggerDocument from '../util/swagger.json';
 
-class ExampleServer extends Server {
+class RChatServer extends Server {
 
     private readonly SERVER_STARTED = 'RChat backend started on port: ';
 
@@ -39,4 +39,4 @@ class ExampleServer extends Server {
     }
 }
 
-export default ExampleServer;
+export default RChatServer;
