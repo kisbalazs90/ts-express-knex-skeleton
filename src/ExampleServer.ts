@@ -1,5 +1,5 @@
 import * as bodyParser from 'body-parser';
-import * as controllers from './controllers';
+import * as controllers from './controllers/_index';
 import { Server } from '@overnightjs/core';
 import { Logger } from '@overnightjs/logger';
 import * as swaggerUi from 'swagger-ui-express';
