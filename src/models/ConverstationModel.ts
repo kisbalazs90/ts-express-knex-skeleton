@@ -27,7 +27,6 @@ export class ConverstationModel {
                 .whereNull('is_deleted');
                 
         } catch (error) {
-            console.log(error)
             Logger.Err(error);
         }
     }

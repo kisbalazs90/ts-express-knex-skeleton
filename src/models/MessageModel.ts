@@ -7,7 +7,6 @@ export class MessageModel {
     private db:any = db;
     
     public async save(message:MessageInterface) {
-        console.log('!!!!!Message', message);
         try {
             return await this.db()
             .insert({
@@ -30,7 +29,6 @@ export class MessageModel {
                 .where({ conversation_id:conversationId })
                 .whereNull('is_deleted')
         } catch (error) {
-            console.log(error)
             Logger.Err(error);   
         }
     }
