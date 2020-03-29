@@ -1,6 +1,6 @@
 import { db } from '../config/db';
 import { Logger } from '@overnightjs/logger';
-import { ConverstationInterface } from 'src/interfaces/ConverstationInterface';
+import { ConverstationInterface } from '../interfaces/ConverstationInterface';
 
 export class ConverstationModel {
     private tableName:string = 'converstations';
@@ -9,11 +9,11 @@ export class ConverstationModel {
     public async save(converstaion:ConverstationInterface) {
         try {
             return await this.db()
-            .insert({
-               name: converstaion.name,
-               members: converstaion.members,
-            })
-            .into(this.tableName);   
+                .insert({
+                    name: converstaion.name,
+                    members: converstaion.members,
+                })
+                .into(this.tableName);   
         } catch (error) {
             Logger.Err(error)
         }

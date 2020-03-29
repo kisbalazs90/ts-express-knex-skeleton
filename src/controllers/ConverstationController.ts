@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { Controller, Middleware, Get, Put, Post, Delete, ClassMiddleware } from '@overnightjs/core';
 import { JwtManager } from '@overnightjs/jwt';
 import { MessageModel } from '../models/MessageModel';
-import { ConverstationModel } from 'src/models/ConverstationModel';
+import { ConverstationModel } from '../models/ConverstationModel';
 
 @Controller('converstations')
 export class ConverstationController {
