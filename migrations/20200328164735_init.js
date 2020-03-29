@@ -6,11 +6,13 @@ exports.up = function(knex) {
             table.string('name', 255).notNullable();
             table.string('email', 255).notNullable();
             table.string('password', 255).notNullable();
+            table.timestamp('created_at');
         })
         .createTable('conversations', function (table) {
             table.increments('id');
             table.string('name', 255).notNullable();
             table.json('members').notNullable();
+            table.timestamp('created_at');
             table.timestamp('deleted_at');
         })
         .createTable('messages', function (table) {
