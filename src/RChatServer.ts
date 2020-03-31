@@ -4,6 +4,7 @@ import { Server } from '@overnightjs/core';
 import { Logger } from '@overnightjs/logger';
 import * as swaggerUi from 'swagger-ui-express';
 import * as swaggerDocument from '../util/swagger.json';
+import * as cors from 'cors';
 
 class RChatServer extends Server {
 
@@ -11,6 +12,7 @@ class RChatServer extends Server {
 
     constructor() {
         super(true);
+        this.app.use(cors())
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({extended: true}));
         this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
